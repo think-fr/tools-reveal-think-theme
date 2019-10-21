@@ -3,7 +3,7 @@ languageCode = "fr-FR"
 title = "Think - Nom de la formation"
 description = "Description de la formation"
 disableKinds = ["sitemap", "RSS"]
-theme = "reveal-hugo"
+theme = ["reveal-hugo", "think"]
 themesDir = "./themes"
 
 # Specific settings for static content
