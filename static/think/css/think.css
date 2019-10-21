@@ -179,10 +179,11 @@ body {
   line-height: 1.2em;
   word-wrap: break-word;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); }
-
+.reveal ul code,
+.reveal ol code,
 .reveal p code {
   font-family: monospace;
-  font-size: 0.95em;
+  font-size: 0.8em;
   text-transform: none;
   background-color: #eef;
   padding: 5px;
@@ -316,19 +317,45 @@ body {
 /*********************************************
  * SLIDES THEMES
  *********************************************/
-.reveal .slides section.top-centered {
+
+ /* Default */
+.reveal .slides section {
   height: 100%;
 }
-.reveal .slides section.top-centered h3 {
+.reveal .slides section h2,
+.reveal .slides section h3 {
   height: 25%;
   text-align: center;
 }
 
+/* Top Centered (default) */
+.reveal .slides section.top-center {
+  height: 100%;
+}
+.reveal .slides section.top-center h2,
+.reveal .slides section.top-center h3 {
+  height: 25%;
+  text-align: center;
+}
+
+/* Top */
 .reveal .slides section.top {
   height: 100%;
 }
+.reveal .slides section.top h2,
 .reveal .slides section.top h3 {
   font-size: 1.6em;
+}
+
+/* Center and Title */
+.reveal .slides section.center,
+.reveal .slides section.title {
+  text-align: center;
+  height: auto;
+}
+
+.reveal .slides section.title p {
+  text-align: center;
 }
 
 
