@@ -1,0 +1,48 @@
+baseURL = "https://think.fr"
+languageCode = "fr-FR"
+title = "Think - Nom de la formation"
+description = "Description de la formation"
+disableKinds = ["sitemap", "RSS"]
+theme = "reveal-hugo"
+themesDir = "./themes"
+
+# Specific settings for static content
+relativeURLs = true
+uglyURLs = true
+
+[author]
+name = "Formateur Think"
+mail = "Email Formateur en @think.fr"
+
+[outputFormats.Reveal]
+baseName = "index"
+mediaType = "text/html"
+isHTML = true
+
+# More configuration options here
+# https://github.com/hakimel/reveal.js/#configuration
+# https://github.com/hakimel/reveal.js/#presentation-size 
+[params.reveal_hugo]
+custom_theme = "think/css/think.css"
+# add the specified in static folder
+# ex: public/css/custom.css
+#custom_css = "css/custom.css"
+margin = 0.2
+highlight_theme = "solarized-dark"
+transition = "slide"
+transition_speed = "fast"
+#mouse_wheel = true
+
+# if set it displayes the logo at top left
+[params.logo]
+src = "assets-theme/logo-hexagon.svg"
+alt = "Th!nk logo"
+
+# Template exemple
+#[params.reveal_hugo.templates.grey]
+#background = "#424242"
+#transition = "convex"
+# used home/body.html partials
+#[params.reveal_hugo.templates.hotpink]
+#class = "hotpink"
+#background = "#FFDDDD"
