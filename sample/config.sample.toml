@@ -25,24 +25,12 @@ isHTML = true
 [params.reveal_hugo]
 custom_theme = "think/css/think.css"
 # add the specified in static folder
-# ex: public/css/custom.css
+# ex: static/css/custom.css
 #custom_css = "css/custom.css"
 margin = 0.2
+# highlightjs theme
+# available themes in themes/reveal-hugo/static/highlight-js
 highlight_theme = "solarized-dark"
 transition = "slide"
 transition_speed = "fast"
 #mouse_wheel = true
-
-# if set it displayes the logo at top left
-[params.logo]
-src = "assets-theme/logo-hexagon.svg"
-alt = "Th!nk logo"
-
-# Template exemple
-#[params.reveal_hugo.templates.grey]
-#background = "#424242"
-#transition = "convex"
-# used home/body.html partials
-#[params.reveal_hugo.templates.hotpink]
-#class = "hotpink"
-#background = "#FFDDDD"
