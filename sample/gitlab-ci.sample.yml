@@ -5,6 +5,7 @@ image: registry.gitlab.com/pages/hugo:latest
 
 stages:
   - check
+  - build
   - deploy
 .build_template: &build_template
   script:
@@ -13,12 +14,23 @@ stages:
 test:
   stage: check
   <<: *build_template
+  except:
+  - master
 
 generate:
-  stage: deploy
+  stage: build
   <<: *build_template
   artifacts:
     paths:
     - public
   only:
   - master
+
+send_gcp:
+  stage: deploy
+  image: google/cloud-sdk:alpine
+  script:
+    - echo $BUCKET_SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
+    - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
+    - gsutil cp -r public gs://$BUCKET_NAME/${CI_PROJECT_NAMESPACE/thinkfr\//}/$CI_PROJECT_NAME
+
