@@ -1,0 +1,18 @@
+
+{{- $itemArray:= split .Inner "\n" -}}
+{{- $firstLevelOpened:= false -}}
+<ul class='{{ .Get "class" }}' >
+{{- range $itemArray -}}
+    {{- if ne . "" -}}
+        {{- $isFirstLevel:= (substr . 0 1)| eq "-" -}}
+        {{- if (and ($firstLevelOpened) ($isFirstLevel)) -}}
+        </li>
+    {{- end -}}
+        {{- if (and (not $firstLevelOpened) ($isFirstLevel)) -}}
+        <li class='fragment'>
+            {{- $firstLevelOpen:= true -}}
+        {{- end -}}
+        {{ replaceRE "^-(.*)" "$1" . | markdownify | replaceRE "<li>(.*)" "<li class='fragment'>$1" | safeHTML }}
+    {{- end -}}
+{{- end -}}
+</ul>
