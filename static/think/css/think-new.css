@@ -35,8 +35,10 @@ body {
 .reveal .slides section,
 .reveal .slides section > section {
   line-height: 1.3;
-  font-weight: inherit; }
-
+  font-weight: inherit; 
+  width: 70%;
+  height: 100%;
+} 
 .reveal .slides section.past,
 .reveal .slides section.present,
 .reveal .slides section.future {
@@ -54,10 +56,9 @@ body {
   margin: 0 0 20px 0;
   color: black;
   font-family: "Roboto", Helvetica, sans-serif;
-  line-height: 1.3;
+  line-height: 1.7em;
   letter-spacing: normal;
   text-shadow: none;
-  word-wrap: break-word; 
   text-align: left;
 }
 .reveal h1,
@@ -65,8 +66,11 @@ body {
   background-image: url(../img/blue-bar.svg);
   background-position: bottom left;
   background-repeat: no-repeat;
+  width: 40%;
   font-weight: 700;
 }
+
+
 .reveal h1 {
   font-size: 1.8em; 
 }
@@ -99,13 +103,21 @@ body {
 /*********************************************
  * OTHER
  *********************************************/
-.reveal p {
-  margin: 20px 0;
-  font-size: 0.7em;
-  line-height: 1; 
-  text-align: justify;
+
+.reveal p ,
+.reveal ol,
+.reveal dl,
+.reveal ul 
+{
+  padding-top: 1em;
 }
 
+.reveal p {
+  margin: 2em 0;
+  font-size: 0.6em;
+  line-height: 1.2; 
+  text-align: justify;
+}
 
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img,
@@ -131,10 +143,11 @@ body {
 .reveal ol,
 .reveal dl,
 .reveal ul {
-  font-size: 0.7em;
-  display: inline-block;
+  font-size: 0.6em;
+  display: inherit;
   text-align: left;
-  margin: 0 0 0 1em; }
+  margin: 0 0 0 4em;
+ }
 
 .reveal ol {
   list-style-type: decimal; }
@@ -184,19 +197,25 @@ body {
 .reveal pre {
   display: block;
   position: relative;
-  width: 95%;
-  margin: 20px auto;
+  width: auto;
+  max-width: 90%;
+  margin: 1em auto;
   text-align: left;
-  font-size: 0.45em;
   font-family: monospace;
   line-height: 1.2em;
   word-wrap: break-word;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); }
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); 
+}
+
+.reveal pre code{
+  font-size: 0.4em;
+  line-height: 1.1em;
+}
 .reveal ul code,
 .reveal ol code,
 .reveal p code {
   font-family: monospace;
-  font-size: 0.8em;
+  font-size: 0.85em;
   text-transform: none;
   background-color: #C5D6EC;
   padding: 5px;
@@ -245,7 +264,7 @@ body {
 
 .reveal small {
   display: inline-block;
-  font-size: 0.6em;
+  font-size: 0.5em;
   line-height: 1.2em;
   vertical-align: top; }
 
@@ -380,58 +399,102 @@ body {
    background-image: url(../img/background-intro.jpg);
 
  }
-/* Top Centered */
-.reveal .slides section.top-center {
-  height: 100%;
-}
-.reveal .slides section.top-center h2,
-.reveal .slides section.top-center h3 {
-  height: 25%;
-}
-
-/* Top */
-.reveal .slides section.top {
-  height: 100%;
-}
-.reveal .slides section.top h2,
-.reveal .slides section.top h3 {
-  font-size: 1.6em;
+.reveal .slides section.think img {
+  width: 60%;
 }
 
 /* Center and Title */
+.reveal .slides section.think,
 .reveal .slides section.center,
-.reveal .slides section.title {
+.reveal .slides section.title,
+.reveal .slides section.chapter
+ {
   height: auto;
+  width: 100%;
   text-align: center;
 }
 
 .reveal .slides section.title h1,
-.reveal .slides section.title h2 {
+.reveal .slides section.title h2,
+.reveal .slides section.chapter h1,
+.reveal .slides section.chapter h2
+ {
   text-align: center;
   background-image: url(../img/blue-bar.svg);
   background-position: bottom center;
   background-repeat: no-repeat;
   font-weight: 700;
   height: 1.7em;
+  width:auto;
 }
 
-.reveal .slides section.title p {
+.reveal .slides section.title p, 
+.reveal .slides section.chapter p 
+{
   text-align: center;
 }
 
-.reveal .slides section.tleft p {
-  text-align: left;
+
+.reveal .slides section.wide,
+.reveal .slides section.content1,
+.reveal .slides section.content2,
+.reveal .slides section.content3 {
+  width:100%;
 }
 
-.reveal .slides section.hleft h1, 
-.reveal .slides section.hleft h2, 
-.reveal .slides section.hleft h3, 
-.reveal .slides section.hleft h4, 
-.reveal .slides section.hleft h5, 
-.reveal .slides section.hleft h6 {
-  text-align: left;
+.reveal .slide-background.content2 .slide-background-content
+ {
+   background-image: url(../img/rectangle.svg);
+   background-position-x: 55%;
+   background-repeat: no-repeat;
+   background-size: contain;
+ }
+
+.reveal .slide-background.content1 .slide-background-content
+ {
+   background-image: url(../img/trapeze.svg);
+   background-position: left bottom;
+   background-repeat: no-repeat;
+   background-size: contain;
+ }
+
+ .reveal .slides section.content1,
+ .reveal .slides section.content2
+ {
+   height: auto;
+ }
+
+ 
+ .reveal .slides section.content2 .split2:first-of-type,
+ .reveal .slides section.content3 .split2:first-of-type{
+   width: 38%;
+ }
+ .reveal .slides section.content3 .split2 h2{
+   width: 80%;
+   text-align: right;
+   background-position: bottom right;
+ }
+ 
+.reveal .slides section.content3 .split2:nth-of-type(2){
+   left: 40%;
+   width: 35%;
+   height:100%;
+   background-image: url(../img/rectangle-small.svg);
+   background-position: bottom;
+   background-repeat: repeat-x;
+
+}
+.reveal .slides section.content3 .split2 p 
+{
+  padding-top: 0em;
 }
 
+.reveal .slides section.content3 .split2 ul,
+.reveal .slides section.content3 .split2 ol
+{
+
+  margin: 0 0 0 1em;
+}
 /*********************************************
  * TRANSITION SLIDE EFFECT (aka reverse)
  *********************************************/
@@ -458,7 +521,9 @@ body {
   background-color:black;
 }
 
-.reveal .slide-background.title {
+.reveal .slide-background.title,
+.reveal .slide-background.chapter
+ {
   filter: brightness(30%);
   -webkit-filter: brightness(30%);
   color: #fff;
@@ -476,7 +541,7 @@ body {
 .split2{
   width: 48%;
   position: absolute;
-  font-size: 0.8em;
+  /*font-size: 0.8em;*/
 }
 .split2:first-of-type{
   left: 0px;
@@ -487,7 +552,7 @@ body {
 .split3{
   width: 31%;
   position: absolute;
-  font-size: 0.7em;
+  font-size: 0.6em;
   
 }
 .split3:first-of-type{
