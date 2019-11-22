@@ -5,11 +5,14 @@ image: registry.gitlab.com/pages/hugo:latest
 
 stages:
   - check
-  - build
+  - build_html
+  - build_pdf
   - deploy
 .build_template: &build_template
   script:
     - hugo 
+    - pwd
+    - echo $CI_PROJECT_DIR
 
 test:
   stage: check
@@ -17,14 +20,26 @@ test:
   except:
   - master
 
-generate:
-  stage: build
+generate_html:
+  stage: build_html
   <<: *build_template
   artifacts:
     paths:
     - public
   only:
   - master
+
+export:
+  stage: build_pdf
+  image: 
+    name: astefanutti/decktape
+    entrypoint: [""]
+  script:
+  - pwd
+  - node /decktape/decktape.js reveal --chrome-path chromium-browser --chrome-arg="--no-sandbox" $CI_PROJECT_DIR/public/index.html $CI_PROJECT_DIR/slides.pdf
+  artifacts:
+    paths:
+    - slides.pdf
 
 send_gcp:
   stage: deploy
@@ -33,4 +48,5 @@ send_gcp:
     - echo $BUCKET_SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
     - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
     - gsutil cp -r public gs://$BUCKET_NAME/${CI_PROJECT_NAMESPACE/thinkfr\//}/$CI_PROJECT_NAME
+    - gsutil cp slides.pdf gs://$BUCKET_NAME/${CI_PROJECT_NAMESPACE/thinkfr\//}/$CI_PROJECT_NAME/slides.pdf
 
