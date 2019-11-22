@@ -1,36 +1,50 @@
+# leave a url to make hugo serve displayed a good url
 baseURL = "https://think.fr"
 languageCode = "fr-FR"
-title = "Think - Nom de la formation"
-description = "Description de la formation"
+title = "Think - Titre de ma formation"
+description = "Description de ma formation"
 disableKinds = ["sitemap", "RSS"]
-theme = ["reveal-hugo", "think"]
+# Theme think should be first to get partials working
+theme = ["think", "reveal-hugo"]
 themesDir = "./themes"
 
 # Specific settings for static content
+# Do not change if you are using CI/CD
 relativeURLs = true
 uglyURLs = true
 
 [author]
-name = "Formateur Think"
-mail = "Email Formateur en @think.fr"
+# These properties are used some slides
+name = "Prénom Nom"
+mail = "prenom.nom@think.fr"
+
 
 [outputFormats.Reveal]
 baseName = "index"
 mediaType = "text/html"
 isHTML = true
 
-# More configuration options here
-# https://github.com/hakimel/reveal.js/#configuration
-# https://github.com/hakimel/reveal.js/#presentation-size 
 [params.reveal_hugo]
-custom_theme = "think/css/think.css"
+# this theme shouldn't be changed use custom_css instead
+custom_theme = "think/css/think-new.css"
 # add the specified in static folder
 # ex: static/css/custom.css
 #custom_css = "css/custom.css"
-margin = 0.2
-# highlightjs theme
-# available themes in themes/reveal-hugo/static/highlight-js
+
+# Presentation size - do not change if possible
+margin = 0.05
+width = 1600
+height = 900
+
+# These RevealJS's settings could be change
+# Here are some defaults 
+# More configuration options here
+# https://github.com/hakimel/reveal.js/#configuration
+
 highlight_theme = "solarized-dark"
 transition = "slide"
 transition_speed = "fast"
-#mouse_wheel = true
+mouse_wheel = true
+controls = false
+#slide_number = true
+progressBar = false
