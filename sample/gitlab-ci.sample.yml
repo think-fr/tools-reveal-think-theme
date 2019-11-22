@@ -42,5 +42,5 @@ send_gcp:
     - gsutil cp -r public gs://$BUCKET_NAME/${CI_PROJECT_NAMESPACE/thinkfr\//}/$CI_PROJECT_NAME
     - gsutil cp slides.pdf gs://$BUCKET_NAME/${CI_PROJECT_NAMESPACE/thinkfr\//}/$CI_PROJECT_NAME/slides.pdf
   only:
-    master
+    - master
 
