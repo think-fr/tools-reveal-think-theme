@@ -14,20 +14,12 @@ stages:
     - pwd
     - echo $CI_PROJECT_DIR
 
-test:
-  stage: check
-  <<: *build_template
-  except:
-  - master
-
 generate_html:
   stage: build_html
   <<: *build_template
   artifacts:
     paths:
     - public
-  only:
-  - master
 
 export:
   stage: build_pdf
@@ -49,4 +41,6 @@ send_gcp:
     - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
     - gsutil cp -r public gs://$BUCKET_NAME/${CI_PROJECT_NAMESPACE/thinkfr\//}/$CI_PROJECT_NAME
     - gsutil cp slides.pdf gs://$BUCKET_NAME/${CI_PROJECT_NAMESPACE/thinkfr\//}/$CI_PROJECT_NAME/slides.pdf
+  only:
+    master
 
