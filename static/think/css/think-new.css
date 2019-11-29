@@ -66,7 +66,7 @@ body {
   background-image: url(../img/blue-bar.svg);
   background-position: bottom left;
   background-repeat: no-repeat;
-  width: 40%;
+  width: 70%;
   font-weight: 700;
 }
 
@@ -111,9 +111,12 @@ body {
 {
   padding-top: 1em;
 }
+.reveal p:first-of-type {
+  margin: 2em 0 0 0;
+}
 
 .reveal p {
-  margin: 2em 0;
+  margin: 1em 0;
   font-size: 0.6em;
   line-height: 1.2; 
   text-align: justify;
@@ -417,7 +420,9 @@ body {
 .reveal .slides section.title h1,
 .reveal .slides section.title h2,
 .reveal .slides section.chapter h1,
-.reveal .slides section.chapter h2
+.reveal .slides section.chapter h2,
+.reveal .slides section.center h1,
+.reveal .slides section.center h2
  {
   text-align: center;
   background-image: url(../img/blue-bar.svg);
@@ -429,16 +434,28 @@ body {
 }
 
 .reveal .slides section.title p, 
-.reveal .slides section.chapter p 
+.reveal .slides section.chapter p,
+.reveal .slides section.center p, 
+.reveal .slides section.title img, 
+.reveal .slides section.chapter img,
+.reveal .slides section.center img 
 {
   text-align: center;
 }
 
+.reveal .slides section.center ul,
+.reveal .slides section.center ol
+{
+  position: relative;
+  left: 30%;
+}
 
 .reveal .slides section.wide,
 .reveal .slides section.content1,
 .reveal .slides section.content2,
-.reveal .slides section.content3 {
+.reveal .slides section.content3,
+.reveal .slides section.center
+{
   width:100%;
 }
 
@@ -469,6 +486,8 @@ body {
  .reveal .slides section.content3 .split2:first-of-type{
    width: 38%;
  }
+
+
  .reveal .slides section.content3 .split2 h2{
    width: 80%;
    text-align: right;
@@ -484,6 +503,8 @@ body {
    background-repeat: repeat-x;
 
 }
+
+.reveal .slides section.content2 .split2 p,
 .reveal .slides section.content3 .split2 p 
 {
   padding-top: 0em;
