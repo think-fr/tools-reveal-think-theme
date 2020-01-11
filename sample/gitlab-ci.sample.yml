@@ -1,7 +1,7 @@
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-image: registry.gitlab.com/pages/hugo:latest
+image: registry.gitlab.com/pages/hugo:0.58.3
 
 stages:
   - check
@@ -14,12 +14,20 @@ stages:
     - pwd
     - echo $CI_PROJECT_DIR
 
+test:
+  stage: check
+  <<: *build_template
+  except:
+    - master
+
 generate_html:
   stage: build_html
   <<: *build_template
   artifacts:
     paths:
     - public
+  only:
+    - master
 
 export:
   stage: build_pdf
@@ -32,6 +40,8 @@ export:
   artifacts:
     paths:
     - slides.pdf
+  only:
+    - master
 
 send_gcp:
   stage: deploy
@@ -43,4 +53,17 @@ send_gcp:
     - gsutil cp slides.pdf gs://$BUCKET_NAME/${CI_PROJECT_NAMESPACE/thinkfr\//}/$CI_PROJECT_NAME/slides.pdf
   only:
     - master
+
+pages:
+  stage: deploy
+  script:
+    - echo "Deploying content on gitlab pages"
+  artifacts:
+    paths:
+    - public
+  only:
+    refs:
+      - master
+    variables:
+      - $ENABLE_GITLAB_PAGES == "1"
 
