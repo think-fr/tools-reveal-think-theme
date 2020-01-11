@@ -111,6 +111,13 @@ body {
 {
   padding-top: 1em;
 }
+
+.reveal li {
+  padding: 0.5em 0;
+}
+.reveal li li{
+  padding: 0.2em 0;
+}
 .reveal p:first-of-type {
   margin: 2em 0 0 0;
 }
