@@ -9,7 +9,7 @@ theme = ["think", "reveal-hugo"]
 themesDir = "./themes"
 
 # Specific settings for static content
-# Do not change if you are using CI/CD
+# Do not change if you want real static content
 relativeURLs = true
 uglyURLs = true
 
