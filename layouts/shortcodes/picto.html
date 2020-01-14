@@ -1,1 +1,5 @@
+{{- if .IsNamedParams -}}
 <i class="{{ with .Get "style-prefix" }}{{.}}{{else}}fas{{end}} {{ .Get "name" }} {{ with .Get "class" }}{{.}}{{ end }}"></i>
+{{- else -}}
+<i class="{{ with .Get 1 }}{{.}}{{else}}fas{{end}} {{ .Get 0 }} {{ with .Get 2 }}{{.}}{{end}}"></i>
+{{- end -}}
