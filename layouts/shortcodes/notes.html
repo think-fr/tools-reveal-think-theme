@@ -3,5 +3,5 @@
     {{ $_hugo_config := `{ "version": 1 }` }}
     {{- if (and (isset .Site.Params.notes "hidden") (.Site.Params.notes.hidden)) -}}
     {{ else }}
-    <aside class="notes">{{ .Inner }}</aside> 
+    <aside class="notes">{{ .Inner }}</aside>
     {{ end }}

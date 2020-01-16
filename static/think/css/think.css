@@ -58,11 +58,11 @@ body {
   line-height: 1.2;
   letter-spacing: normal;
   text-shadow: none;
-  word-wrap: break-word; 
+  word-wrap: break-word;
 }
 
 .reveal h1 {
-  font-size: 2em; 
+  font-size: 2em;
 }
 
 .reveal h2 {
@@ -92,7 +92,7 @@ body {
 .reveal p {
   margin: 20px 0;
   font-size: 0.8em;
-  line-height: 1.3; 
+  line-height: 1.3;
 }
 
 
@@ -128,7 +128,7 @@ body {
   list-style-type: decimal; }
 
 .reveal ul {
-  list-style-image: url('../img/bullet_hexagon.png');  
+  list-style-image: url('../img/bullet_hexagon.png');
 }
 
 .reveal ul ul {
@@ -351,11 +351,11 @@ body {
   text-align: left;
 }
 
-.reveal .slides section.hleft h1, 
-.reveal .slides section.hleft h2, 
-.reveal .slides section.hleft h3, 
-.reveal .slides section.hleft h4, 
-.reveal .slides section.hleft h5, 
+.reveal .slides section.hleft h1,
+.reveal .slides section.hleft h2,
+.reveal .slides section.hleft h3,
+.reveal .slides section.hleft h4,
+.reveal .slides section.hleft h5,
 .reveal .slides section.hleft h6 {
   text-align: left;
 }
@@ -396,7 +396,7 @@ body {
   width: 31%;
   position: absolute;
   font-size: 0.7em;
-  
+
 }
 .split3:first-of-type{
   left: 0px;

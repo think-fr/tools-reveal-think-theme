@@ -9,9 +9,9 @@ The better place to get all information is locate on [reveal-hugo-template](http
 However you can use it this template the following command:
 
 ```bash
-# First create a repo on gitlab with the name with your presentation. 
+# First create a repo on gitlab with the name with your presentation.
 
-# Create a new hugo site : 
+# Create a new hugo site :
 # hugo do not create site if folder is not empty
 hugo new site <presentation_name>
 cd <presentation_name>

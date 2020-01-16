@@ -21,7 +21,7 @@ function manipulateFooter(){
     else {
         console.log('hidding slide footer');
         document.getElementById('slide-footer').className = "hidden";
-    } 
+    }
 }
 
 // in case we miss ready event
