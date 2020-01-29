@@ -236,7 +236,8 @@ body {
   padding: 10px;
   overflow: auto;
   max-height: 80%;
-  word-wrap: normal; }
+  white-space: pre-wrap;
+  word-wrap: break-word; }
 
 .reveal table {
   margin: auto;
