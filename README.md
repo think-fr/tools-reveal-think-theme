@@ -21,14 +21,10 @@ git init
 git remote add origin <git_repository_ssh_url>
 
 # add remote themes reveal-hugo and this one
-# relative url is required for ci/cd
 git submodule add https://github.com/dzello/reveal-hugo.git themes/reveal-hugo
-git submodule add ../think-theme.git themes/think
+git submodule add https://github.com/think-fr/tools-reveal-think-theme-public.git themes/think
 
 # copy hugo sample configuration and replace corresponding values
-cp themes/think/sample/config.sample.tom config.toml
-# if you want to activate CI/CD - no change required
-# CI/CD requires token and settings which are set in few groups only
-cp themes/think/sample/gitlab-ci.sample.yml .gitlab-ci.yml
+cp themes/think/sample/config.sample.toml config.toml
 
 ```
